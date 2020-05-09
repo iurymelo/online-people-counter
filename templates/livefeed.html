@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>People Counter - Live Feed</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+    <style>
+        body,
+        h1,
+        h2,
+        h3,
+        h4,
+        h5 {
+            font-family: "Raleway", sans-serif
+        }
+    </style>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+</head>
+
+<body class="w3-light-grey">
+    <div class="w3-content" style="max-width:1400px">
+        <header class="w3-container w3-center">
+            <h1><b><a style="text-decoration: none;" href="/">People Counter</a></b></h1>
+            <p>Computer Vision to detect and count people by <span class="w3-tag"><a href="https://www.linkedin.com/in/iuryamerico/" target="_blank">Iury Melo</a></p></span></p>
+        </header>
+        
+        <div class="w3-card-4 w3-white w3-margin-top" style="width:100%; position: absolute; left: 0; margin: 0; padding: 0;">
+        <center>
+            <h1>Number of People Detected: {{numObj}}</h1>
+            <h1>Confidence: {{conf*100}}%</h1>
+        </center>
+
+        <div class="feed">
+            <div class="w3-column feedbox">
+                <h3>Live Feed</h3>
+                <img class="responsive" src="http://176.57.73.231/mjpg/video.mjpg"></img>
+            </div>
+            <div class="w3-column feedbox">
+                <h3>Frame Used to Predict</h3>
+                <img class="responsive" src="{{url_for('static', filename='boxes.jpg')}}"></img>
+            </div>
+        </div>
+        <div class="w3-row w3-center">
+            <div class="w3-col s18 w3-center">
+                <p><a class="w3-button w3-padding-large w3-white w3-center" href='/'><b>BACK TO HOME</b></a></p>
+            </div>
+        </div>
+    </div>
+    </div>
+</body>
+
+</html>

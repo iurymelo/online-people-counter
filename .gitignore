@@ -1,0 +1,10 @@
+.vscode
+__pycache__
+utils/__pycache__
+count
+dnn_config_files/yolov3.weights
+
+# Heroku Files
+Aptfile
+Procfile
+runtime.txt

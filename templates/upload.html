@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>People Counter - Upload Image</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+    <style>
+        body,
+        h1,
+        h2,
+        h3,
+        h4,
+        h5 {
+            font-family: "Raleway", sans-serif
+        }
+    </style>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+</head>
+
+<body class="w3-light-grey">
+    <div class="w3-content" style="max-width:1400px">
+        <header class="w3-container w3-center w3-padding-32">
+            <h1><b><a style="text-decoration: none;" href="/">People Counter</a></b></h1>
+            <p>Computer Vision to detect and count people by <span class="w3-tag"><a
+                        href="https://www.linkedin.com/in/iuryamerico/" target="_blank">Iury Melo</a></p></span></p>
+        </header>
+        <div class="w3-card-4 w3-margin w3-white">
+            <div class="w3-container w3-center">
+                <h3><b>Select an Image</b></h3>
+            </div>
+
+            <div class="w3-container w3-center">
+                <p>Upload an image from your computer and wait. In a few seconds the results will show up.</p>
+                <form action='/upload' method='POST' enctype="multipart/form-data">
+                    <input oninput="filesize(this);" type="file" class="w3-input w3-center" style="max-width: 350px; margin:auto; width: 50%; align-items: center;" name="image" id="image">
+                    <label for="image">Select Image (max. 2.5MB)</label>
+                    <br />
+                    <button type="submit"
+                        class="w3-button w3-padding-large w3-white w3-right w3-hoverable"><b>COUNT</b></button>
+
+                    <br />
+                </form>
+                {% with messages = get_flashed_messages() %}
+                    {% if messages %}
+                        <ul class=flashes>
+                        {% for message in messages %}
+                        <li>{{ message }}</li>
+                        {% endfor %}
+                        </ul>
+                    {% endif %}
+                {% endwith %}
+            </div>
+
+            {% if uploaded==True %}
+                {% if suc %}
+                    <div class="w3-center">
+                        <center>
+                            <h1>Number of People Detected: {{numObj}}</h1>
+                            <h1>Confidence: {{conf}}%</h1>
+                        </center>
+                        <div class="feed">
+                            <div class="feedbox">
+                                <h3>Image Uploaded</h3>
+                                <img class="responsive" width=500 src="{{url_for('static', filename='images/uploads/input')}}" style="max-width: 500px;"></img>
+                            </div>
+                            <div class="feedbox">
+                                <h3>Prediction Boxes</h3>
+                                <img class="responsive" width=500 src="{{url_for('static', filename='boxes.jpg')}}" style="max-width: 500px;"></img>
+                            </div>
+                        </div>                
+                    </div>
+
+                {% else %}
+                    <ul class=flashes style="text-align: center;">
+                        <h5>Error: </h5>
+                        <li>{{ errorMsg }}</li>
+                    </ul>
+                {% endif %}
+            {% endif %}
+            <div class="w3-row w3-center">
+                <div class="w3-col s18 w3-center">
+                    <p><a class="w3-button w3-padding-large w3-white w3-center" href='/'><b>BACK TO HOME</b></a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    {% block script %}
+    <script>
+        function filesize(elem){
+            document.cookie =  `filesize=${elem.files[0].size}`
+        }
+    </script>
+    {% endblock %}
+
+     <!-- Footer -->
+     <footer class="w3-container w3-light-grey w3-padding-32 w3-margin-top w3-center">
+        <p>Made by Iury Melo. <a href="https://github.com/iurymelo" target="_blank">GitHub</a> <a href="https://www.linkedin.com/in/iuryamerico/" target="_blank">LinkedIn</a></p>
+    </footer>
+</body>
+
+</html>
