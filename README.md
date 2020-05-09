@@ -2,7 +2,7 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT) [![Version: Python](https://img.shields.io/badge/Python-3.7.2-blue)](https://www.python.org/downloads/) [![Version: Flask](https://img.shields.io/badge/Flask-1.1.X-blue)](https://flask.palletsprojects.com/en/1.1.x/) [![Version: Flask](https://img.shields.io/badge/Yolo-V3-blue)](https://pjreddie.com/darknet/yolo/)
 
 <p align="center">
-![](https://media.giphy.com/media/dv1V127SvGgn2e908G/giphy.gif) 
+![Detection](https://media.giphy.com/media/dv1V127SvGgn2e908G/giphy.gif)
 </p>
 
 
