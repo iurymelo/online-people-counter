@@ -1,10 +1,7 @@
 # Online People Counter
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT) [![Version: Python](https://img.shields.io/badge/Python-3.7.2-blue)](https://www.python.org/downloads/) [![Version: Flask](https://img.shields.io/badge/Flask-1.1.X-blue)](https://flask.palletsprojects.com/en/1.1.x/) [![Version: Flask](https://img.shields.io/badge/Yolo-V3-blue)](https://pjreddie.com/darknet/yolo/)
 
-<p align="center">
 ![Detection](proj_gif/giphy.gif)
-</p>
-
 
 Online people counter using YoloV3 and Flask. I used Heroku to send to production: [Click here to have a demo.](http://count-people.herokuapp.com/). It reads a image file sent by the user or frames from an online feed. 
 
