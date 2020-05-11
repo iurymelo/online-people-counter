@@ -54,7 +54,7 @@ net = cv.dnn.readNetFromDarknet(modelConfiguration, modelWeights)
 net.setPreferableBackend(cv.dnn.DNN_BACKEND_OPENCV)
 net.setPreferableTarget(cv.dnn.DNN_TARGET_CPU)
 
-# Configurations for image upload
+# Configurations for image uploading
 DEV_PATH = '/app/static/images/uploads'
 app.config["IMAGE_UPLOADS"] = 'static/images/uploads'
 app.config["ALLOWED_IMAGE_EXTENSIONS"] = ["JPG", "JPEG"]
@@ -78,7 +78,7 @@ def getOutputsNames(net):
 
 
 def drawPred(frame, classId, conf, left, top, right, bottom):
-    """Draw a rectangle on around a found person.
+    """Draw a rectangle around a found person.
 
     Arguments:
         classId {list} -- List of class id's.
@@ -101,7 +101,7 @@ def drawPred(frame, classId, conf, left, top, right, bottom):
     
     
 def postprocess(frame, outs):
-    """Remove predictions with low confidence using non-maximum suppression
+    """Remove predictions with low confidence using non-maximum suppression.
 
     Arguments:
         frame {frame} -- Video Frame
@@ -151,7 +151,7 @@ def postprocess(frame, outs):
 
 
 def count_boxes(boxes):
-    """Count the number of boxes (predictions)
+    """Count the number of boxes (predictions).
 
     Arguments:
         boxes {list} -- List of boxes
@@ -170,7 +170,7 @@ def confidence(outs):
     """Calculate the result's confidence using the median of all boxes' confidences.
 
     Arguments:
-        outs {output} -- Result of a network.
+        outs {output} -- Result from a network.
 
     Returns:
         float -- Confidence between 0 and 1. 
@@ -192,13 +192,12 @@ def confidence(outs):
 
 
 def do_predictions(live=True):
-    """Predict the number of people in a video feed.
+    """Predict the number of persons in a frame or pic.
     Arguments: 
-        live {boolean}: True = Capturing from a live feed. False: Capture from uploaded file.
-        imgPath {string}: Path to the image
+        live {boolean}: True = Count from a live feed. False: Count from an uploaded file.
 
     Returns:
-        list -- Success: Boolean, Number of detected objects: int, confidence: str, and error message: str 
+        list -- [Success : Boolean, Number of detected objects : int, confidence : str, Error Message : str]
     """
     try:
         

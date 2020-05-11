@@ -6,7 +6,7 @@ from collections import OrderedDict
 import numpy as np
 
 class CentroidTracker():
-	"""Detect and track the centroid of detection boxes.
+	"""Detect and track the boxes' centroid.
 	"""
 	def __init__(self, maxDisappeared=5):
 		self.nextObjectID = 0
@@ -15,17 +15,17 @@ class CentroidTracker():
 		self.maxDisappeared = maxDisappeared
 
 	def register(self, centroid):
-		"""Register a new box to tack.
+		"""Register a new centroid to track.
 
 		Arguments:
-			centroid {int} -- Centroid ID to register
+			centroid {int} -- Centroid's ID to register
 		"""
 		self.objects[self.nextObjectID] = centroid
 		self.disappeared[self.nextObjectID] = 0
 		self.nextObjectID += 1
 
 	def deregister(self, objectID):
-		"""Remove tracking of a centroid
+		"""Remove tracking from a centroid.
 
 		Arguments:
 			objectID {int} -- Centroid ID to remove.
@@ -34,8 +34,8 @@ class CentroidTracker():
 		del self.disappeared[objectID]
 
 	def update(self, rects):
-		"""Update the centroid list to remove boxes disapread from a
-		period of time and the position of the centroids.
+		"""Update the centroid list to remove boxes that disappeared from 
+		a period of time and the position of the centroids.
 
 		Returns:
 			Updated list of centroids.
