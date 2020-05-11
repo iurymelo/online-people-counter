@@ -1,9 +1,15 @@
 # Online People Counter
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT) [![Version: Python](https://img.shields.io/badge/Python-3.7.2-blue)](https://www.python.org/downloads/) [![Version: Flask](https://img.shields.io/badge/Flask-1.1.X-blue)](https://flask.palletsprojects.com/en/1.1.x/) [![Version: Flask](https://img.shields.io/badge/Yolo-V3-blue)](https://pjreddie.com/darknet/yolo/)
 
- <img src="https://media.giphy.com/media/dv1V127SvGgn2e908G/giphy.gif" alt="Demo" class="center"> 
+<p align="center">
+   <img src="https://media.giphy.com/media/dv1V127SvGgn2e908G/giphy.gif" alt="Demo" class="center"> 
+</p>
 
-Online people counter using YoloV3 and Flask. I used Heroku to send to production: [Click here to have a demo.](http://count-people.herokuapp.com/). It works counting people from an image file sent by the user or frames from an online feed. 
+
+Online people counter using YoloV3, OpenCV, and Flask. You can take a peek here: [Click here to have a demo](http://count-people.herokuapp.com/). 
+The app counts the number of people using two methods:
+*  on a live feed of an [ice skating rink in Moskow - Russia](http://176.57.73.231/mjpg/video.mjpg). 
+* on a JPG/JPEG image uploaded.
 
 ## Technologies :rocket: :
 
