@@ -10,7 +10,7 @@ Online people counter using YoloV3, OpenCV, and Flask. You can take a peek by [c
 The app counts the number of people from two sources:
 
 * on a live feed of an [ice skating rink in Moskow - Russia](http://176.57.73.231/mjpg/video.mjpg).
-* an uploaded JPG/JPGE image.
+* an uploaded JPG/JPEG image.
 
 ## Technologies :rocket: :
 
